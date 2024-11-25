@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Arquivo</title>
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Upload de Arquivo</h1>
+    </header>
+    <main>
+        <h2>Carregar Arquivo para Processamento</h2>
+        <form method="POST" enctype="multipart/form-data" action="{% url 'upload_file' %}">
+            {% csrf_token %}
+            <label for="files">Selecione os arquivos:</label>
+            <input type="file" id="files" name="files" multiple>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 PlanLab</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha aplicação</title>
+    <!-- Vincula o arquivo de estilo CSS -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 PlanLab - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

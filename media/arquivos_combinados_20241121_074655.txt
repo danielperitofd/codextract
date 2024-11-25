@@ -1,0 +1,112 @@
+=================================================
+Arquivo: extraidos.html
+=================================================
+<!-- extraidos.html -->
+{% extends 'base_generic.html' %}
+{% block content %}
+    <h2 style="text-align: center;">Arquivos Extraídos</h2>
+    <div class="container">
+        <table class="file-table">
+            <thead>
+                <tr>
+                    <th>Nome do Arquivo</th>
+                    <th>Baixar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for arquivo in arquivos %}
+                    <tr>
+                        <td>{{ arquivo }}</td>
+                        <td><a href="{{ MEDIA_URL }}{{ arquivo }}" class="download-btn" download>Baixar</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="2">Nenhum arquivo encontrado.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+=================================================
+Arquivo: home.html
+=================================================
+<!-- fileprocessor/templates/home.html -->
+<html>
+<head>
+    <title>Página Inicial</title>
+</head>
+<body>
+    <h1>Bem-vindo à Página Inicial</h1>
+    <!-- Link para a página de upload -->
+    <a href="{% url 'upload_file' %}">Ir para a página de Upload</a>
+    <br>
+    <!-- Link para o diretório de arquivos de mídia -->
+    <a href="/media/">Acessar Arquivos de Mídia</a>
+</body>
+</html>
+
+=================================================
+Arquivo: index.html
+=================================================
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao CodeExtractor</h1>
+    </header>
+    <main>
+        <p>Selecione Arquivos para Extração e Mesclagem</p>
+        <div class="button-container">
+            <!-- Botões estilizados -->
+            <a href="{% url 'upload_file' %}" class="btn">Upload</a>
+            <a href="{% url 'arquivos_extraidos' %}" class="btn">Extraídos</a> <!-- Corrigido -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 PlanLab</p>
+    </footer>
+</body>
+</html>
+
+=================================================
+Arquivo: upload.html
+=================================================
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Arquivo</title>
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Upload de Arquivo</h1>
+    </header>
+    <main>
+        <h2>Carregar Arquivo para Processamento</h2>
+        <form method="POST" enctype="multipart/form-data" action="{% url 'upload_file' %}">
+            {% csrf_token %}
+            <label for="files">Selecione os arquivos:</label>
+            <input type="file" id="files" name="files" multiple>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 PlanLab</p>
+    </footer>
+</body>
+</html>
+

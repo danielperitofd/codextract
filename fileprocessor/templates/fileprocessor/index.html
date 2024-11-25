@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao CodeExtractor</h1>
+    </header>
+    <main>
+        <p>Selecione Arquivos para Extração e Mesclagem</p>
+        <div class="button-container">
+            <!-- Botões estilizados -->
+            <a href="{% url 'upload_file' %}" class="btn">Upload</a>
+            <a href="{% url 'arquivos_extraidos' %}" class="btn">Extraídos</a> <!-- Corrigido -->
+        </div>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2024 PlanLab</p>
+    </footer>
+</body>
+</html>

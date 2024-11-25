@@ -1,0 +1,226 @@
+/* Geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #005bb5;
+}
+
+/* Estilos para a mensagem de sucesso */
+.success-message {
+    color: #0073e6; /* Azul */
+    font-size: 18px; /* Tamanho da fonte */
+    font-weight: bold;
+    text-align: center;
+    margin: 20px auto;
+    background-color: #e0f7fa; /* Cor de fundo suave */
+    padding: 15px;
+    border: 1px solid #b2ebf2; /* Cor de borda suave */
+    border-radius: 5px;
+    max-width: 600px;
+}
+
+/* Estilos para o botão de download */
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white;
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 0 auto; /* Centraliza o botão */
+    display: block; /* Garante que o botão seja exibido como um bloco */
+    width: fit-content; /* Ajusta a largura ao tamanho do conteúdo */
+}
+
+/* Estilo para o botão ao passar o mouse */
+.download-btn:hover {
+    background-color: #45a049; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+/* Formulário de Upload */
+form {
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+input[type="file"] {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    cursor: pointer;
+}
+
+/* Tabela de Arquivos */
+.file-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.file-table th, .file-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.file-table th {
+    background-color: #0073e6;
+    color: white;
+}
+
+.file-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    color: #ffffff;
+    font-size: 14px;
+}
+@media screen and (max-width: 768px) {
+    .file-table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .file-table th, .file-table td {
+        padding: 10px;
+    }
+
+    .download-btn {
+        width: 100%; /* Deixe o botão ocupar a largura completa em telas pequenas */
+        padding: 15px 0;
+    }
+}
+/* Contêiner da tabela */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Estilo da tabela */
+.file-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Cabeçalho da tabela */
+.file-table th {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Linhas da tabela */
+.file-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Estilo para a última linha, quando não há arquivos */
+.file-table td[colspan="2"] {
+    text-align: center;
+    color: #777;
+}
+
+/* Cor de fundo alternada nas linhas da tabela */
+.file-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsividade: ajustes para telas pequenas */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .file-table {
+        font-size: 12px;
+    }
+
+    .download-btn {
+        width: 100%; /* Botão de download ocupar toda a largura */
+        padding: 10px 0;
+    }
+
+    /* Ajuste das células da tabela em telas pequenas */
+    .file-table th, .file-table td {
+        padding: 10px;
+    }
+}
